@@ -20,7 +20,7 @@ function DashboardSWR() {
   const submitComment = async () => {
     const response = await fetch("/api/comments/comments", {
       method: "POST",
-      body: JSON.stringify({inputcomment}),
+      body: JSON.stringify({ inputcomment }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -29,14 +29,26 @@ function DashboardSWR() {
     return console.log(data);
   };
 
-  const deleteComment = async commentId => {
+  const deleteComment = async (commentId) => {
     const response = await fetch(`/api/comments/${commentId}`, {
-      method: 'DELETE'
-    })
-    const data = await response.json()
-    console.log(data)
-  }
-  
+      method: "DELETE",
+    });
+    const data = await response.json();
+    console.log(data);
+  };
+  const editComment = async (commentId) => {
+    const text = prompt("enter Edit message");
+    const response = await fetch(`/api/comments/${commentId}`, {
+      method: "PATCH",
+      body: JSON.stringify({ text,id:commentId }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    console.log(data);
+  };
+
   return (
     <div>
       <h1>List of Comments</h1>
@@ -49,11 +61,14 @@ function DashboardSWR() {
       <button onClick={submitComment}>Submit-Comment</button>
       {data.map((comment) => {
         return (
-            <div key={comment.id}>
-              <h1>ID-{comment.id} | {comment.text}</h1>
-              <button onClick={()=>deleteComment(comment.id)}>DELETE</button>
-              <hr/>
-            </div>
+          <div key={comment.id}>
+            <h1>
+              ID-{comment.id} | {comment.text}
+            </h1>
+            <button onClick={() => deleteComment(comment.id)}>DELETE</button>
+            <button onClick={() => editComment(comment.id)}>Edit</button>
+            <hr />
+          </div>
         );
       })}
     </div>
