@@ -257,11 +257,9 @@
         "description":"Description"
     }
 ],
-"dashboard":[
-    {
+"dashboard":{
         "id":1,
         "totalposts":"100",
         "likes":"200"
     }
-]
 }

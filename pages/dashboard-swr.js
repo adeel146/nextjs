@@ -1,7 +1,7 @@
 import useSWR from "swr";
 
 const fetcher = async () => {
-  const response = await fetch("http://localhost:4000/dashboard");
+  const response = await fetch("/api");
   const data = await response.json();
   console.log(data);
   return data;
@@ -19,9 +19,9 @@ function DashboardSWR() {
   return (
     <div>
       <h1>Dashboard Data</h1>
-      <h2>pakistan-{data.id}</h2>
-      <h2>{data.totalposts}</h2>
-      <h2>{data.likes}</h2>
+      <h2>ID-{data.id}</h2>
+      <h2> Total Posts -{data.totalposts}</h2>
+      <h2>Total-Likes {data.likes}</h2>
     </div>
   );
 }
