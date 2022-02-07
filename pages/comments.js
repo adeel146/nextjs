@@ -18,7 +18,7 @@ function DashboardSWR() {
   }
 
   const submitComment = async () => {
-    const response = await fetch("/api/comments/comments", {
+    const response = await fetch("/api/comments", {
       method: "POST",
       body: JSON.stringify({ inputcomment }),
       headers: {
