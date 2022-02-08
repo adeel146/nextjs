@@ -3,9 +3,9 @@ import "../styles/globals.css";
 import { Provider } from "next-auth/client"
 import "../components/Navbar.css";
 
-function MyApp({ Component, pageProps}) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
-    <Provider session={pageProps.session}>
+    <Provider>
       <Navbar />
       <Component {...pageProps} />
     </Provider>
