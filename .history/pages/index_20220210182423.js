@@ -21,13 +21,8 @@ function Home() {
           </Link>
         </li>
         <li>
-          <Link href="/comments">
-            <a>client side data fetching and CRUD operations</a>
-          </Link>
-        </li>
-        <li>
           <Link href="/dashboard">
-            <a>OAuth authentication GitHub </a>
+            <a>client side data fetching and CRUD operations</a>
           </Link>
         </li>
       </ul>

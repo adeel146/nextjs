@@ -25,11 +25,6 @@ function Home() {
             <a>client side data fetching and CRUD operations</a>
           </Link>
         </li>
-        <li>
-          <Link href="/dashboard">
-            <a>OAuth authentication GitHub </a>
-          </Link>
-        </li>
       </ul>
     </>
   );

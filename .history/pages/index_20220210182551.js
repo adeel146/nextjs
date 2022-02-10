@@ -27,7 +27,7 @@ function Home() {
         </li>
         <li>
           <Link href="/dashboard">
-            <a>OAuth authentication GitHub </a>
+            <a>oAuth </a>
           </Link>
         </li>
       </ul>
