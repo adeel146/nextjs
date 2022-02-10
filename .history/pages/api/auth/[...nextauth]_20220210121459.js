@@ -13,6 +13,6 @@ export default NextAuth({
     jwt:true
   },
   jwt:{
-    secret:"jhdgsdgd"
+    
   }
 });

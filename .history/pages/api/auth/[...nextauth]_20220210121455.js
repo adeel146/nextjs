@@ -12,7 +12,5 @@ export default NextAuth({
   session:{
     jwt:true
   },
-  jwt:{
-    secret:"jhdgsdgd"
-  }
+  jwt
 });
