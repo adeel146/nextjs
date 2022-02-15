@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getSession, signIn, signOut, useSession } from "next-auth/client";
 
 function Navbar() {
-  const session = getSession()
+  const [session, Loading] = getSession();
   return (
     <nav className="header">
       <h1 className="logo">
