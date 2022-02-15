@@ -7,9 +7,13 @@ export default NextAuth({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
     }),
-    Providers.Google({
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET,
-    })
+    providers.G
   ],
+  database:process.env.DB_URL,
+  session:{
+    jwt:true
+  },
+  jwt:{
+    secret:"jhdgsdgd"
+  }
 });

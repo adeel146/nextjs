@@ -12,8 +12,7 @@ export default function handler(req, res) {
         text: comment,
       };
       comments.push(newcomment);
-
-      return res.status(201).json(newcomment);
+      res.status(201).json(newcomment);
     }
   }
 }

@@ -19,7 +19,7 @@ export default function handler(req, res) {
         (comment) => comment.id === parseInt(commentid)
       );
       comments.splice(index, 1);
-      return res.status(200).json(deletedComment);
+     return  res.status(200).json(deletedComment);
     }
     case "PATCH": {
       const index = comments.findIndex(
@@ -34,5 +34,8 @@ export default function handler(req, res) {
       comments.splice(index, 1, newcomment);
       return res.status(200).json(newcomment);
     }
+
+    default:
+      break;
   }
 }

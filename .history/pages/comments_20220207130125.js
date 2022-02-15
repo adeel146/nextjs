@@ -25,7 +25,7 @@ function DashboardSWR() {
         "Content-Type": "application/json",
       },
     });
-    const data = await  response.json();
+    const data = response.json();
     return console.log(data);
   };
 

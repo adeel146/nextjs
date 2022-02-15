@@ -4,13 +4,7 @@ export default function handler(req, res) {
   const { commentid } = req.query;
 
   switch (req.method) {
-    case "GET": {
-      const comment = comments.find(
-        (comment) => comment.id === parseInt(commentid)
-      );
-      return res.status(200).json(comment);
-    }
-
+   
     case "DELETE": {
       const deletedComment = comments.find(
         (comment) => comment.id === parseInt(commentid)
@@ -19,7 +13,7 @@ export default function handler(req, res) {
         (comment) => comment.id === parseInt(commentid)
       );
       comments.splice(index, 1);
-      return res.status(200).json(deletedComment);
+      res.status(200).json(deletedComment);
     }
     case "PATCH": {
       const index = comments.findIndex(
@@ -32,7 +26,10 @@ export default function handler(req, res) {
         text: comment,
       };
       comments.splice(index, 1, newcomment);
-      return res.status(200).json(newcomment);
+      res.status(200).json(newcomment);
     }
+
+    default:
+      break;
   }
 }
