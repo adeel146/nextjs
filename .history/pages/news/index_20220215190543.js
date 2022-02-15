@@ -5,19 +5,19 @@ function index({ news }) {
     <div>
       <h1>Filter by Category type</h1>
       {news.map((news) => {
-        return (
-          <div key={news.id}>
-            <ul>
-              <li>
-                {news.id} |{news.description} |{" "}
-                <Link href={`news/${news.type}`}>
-                  <a> {news.type}</a>
-                </Link>
-              </li>
-            </ul>
-            <div />
-          </div>
-        );
+        return;
+
+        <div key={news.id}>
+          <ul>
+            <li>
+              {news.id} |{news.description} |{" "}
+              <Link href={`news/${news.type}`}>
+                <a> {news.type}</a>
+              </Link>
+            </li>
+          </ul>
+          <div />
+        </div>;
       })}
     </div>
   );

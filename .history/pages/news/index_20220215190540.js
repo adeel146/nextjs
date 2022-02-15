@@ -5,8 +5,20 @@ function index({ news }) {
     <div>
       <h1>Filter by Category type</h1>
       {news.map((news) => {
-        return (
-          <div key={news.id}>
+        return 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div key ={news.id}>
             <ul>
               <li>
                 {news.id} |{news.description} |{" "}
@@ -17,7 +29,7 @@ function index({ news }) {
             </ul>
             <div />
           </div>
-        );
+        
       })}
     </div>
   );

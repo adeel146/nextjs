@@ -2,20 +2,19 @@ function FilteredByCategory({ category, news }) {
   return (
     <div>
       <h1>Filtered Post by {category}</h1>
-      {news.map((n) => {
-        return (
-          <ul key={n.id}>
-            <li>
-              {n.id} | {n.type} | {n.description}
-            </li>
-          </ul>
-        );
-      })}
+        {news.map((n) => {
+          return <ul key={n.id}>
+              <li>
+                {n.id} | {n.type} | {n.description}
+              </li>
+            </ul>
+          
+        })}
     </div>
   );
 }
 
-export default FilteredByCategory;
+export default FilteredByCategory
 
 export async function getServerSideProps(context) {
   const { params } = context;

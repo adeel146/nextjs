@@ -12,7 +12,7 @@ function FilteredByCategory({ category, news }) {
         );
       })}
     </div>
-  );
+  );s
 }
 
 export default FilteredByCategory;
