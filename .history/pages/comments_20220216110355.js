@@ -38,7 +38,7 @@ function DashboardSWR() {
   };
   const editComment = async (commentId) => {
     const text = prompt("enter Edit message");
-    const response = await fetch(`/api/comments/${commentId}`, {
+    const response = await fetch(`/api/comments/`, {
       method: "PATCH",
       body: JSON.stringify({ text, id: commentId }),
       headers: {

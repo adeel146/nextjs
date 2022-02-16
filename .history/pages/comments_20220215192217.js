@@ -25,8 +25,19 @@ function DashboardSWR() {
         "Content-Type": "application/json",
       },
     });
-    const data = await response.json();
-    return console.log(data);
+    const data = await  response.json();
+    return <>
+    
+    </>
+    const response = await fetch("/api/comments", {
+      method: "POST",
+      body: JSON.stringify({ inputcomment }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await  response.json();
+     console.log(data);
   };
 
   const deleteComment = async (commentId) => {
@@ -40,7 +51,7 @@ function DashboardSWR() {
     const text = prompt("enter Edit message");
     const response = await fetch(`/api/comments/${commentId}`, {
       method: "PATCH",
-      body: JSON.stringify({ text, id: commentId }),
+      body: JSON.stringify({ text,id:commentId }),
       headers: {
         "Content-Type": "application/json",
       },
